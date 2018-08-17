@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Initializing bean  -->
+	<!--
+	<bean id="sgtPeppersDisc" class="soundsystem_wiringusingxmlconfig.SgtPeppers"/>
+	-->
+
+	<!-- Injecting a bean using contructors and bean references  -->
+	<!--
+	<bean id="cdPlayer" class="soundsystem_wiringusingxmlconfig.CDPlayer">
+		<constructor-arg ref="sgtPeppersDisc"/>
+	</bean>
+	-->
+
+
+	<!-- Initializing bean and setting params using constructor args -->
+	<!--
+	<bean id="blankDisc" class="soundsystem_wiringusingxmlconfig.BlankDisc">
+		<constructor-arg value="Sgt. Peppers Lonely Hearts Club Band"/>
+		<constructor-arg value="The Beatles"/>
+	</bean>
+	-->
+
+	<!-- Injecting a bean using contructors and bean references  -->
+	<!--
+	<bean id="cdPlayer" class="soundsystem_wiringusingxmlconfig.CDPlayer">
+		<constructor-arg ref="blankDisc"/>
+	</bean>
+	-->
+
+	<!-- Injecting a bean using property -->
+	<bean id="blankDisc2" class="soundsystem_wiringusingxmlconfig.BlankDisc2">
+		<property name="title" value="Sgt. Peppers Lonely Hearts Club Band" />
+		<property name="artist" value="The Beatles" />
+		<property name="tracks">
+			<list>
+				<value>Sgt. Peppers Lonely Hearts Club Band</value>
+				<value>With a Little Help from My Friends</value>
+				<value>Lucy in the Sky with Diamonds</value>
+				<value>Getting Better</value>
+				<value>Fixing a Hole</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="cdPlayer" class="soundsystem_wiringusingxmlconfig.CDPlayer">
+		<constructor-arg ref="blankDisc2"/>
+	</bean>
+
+</beans>
